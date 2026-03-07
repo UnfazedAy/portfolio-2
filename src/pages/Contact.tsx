@@ -100,7 +100,7 @@ const Contact = () => {
               <div className="flex items-center gap-2 mb-4">
                 <span className="w-3 h-3 rounded-full bg-destructive/80" />
                 <span className="w-3 h-3 rounded-full bg-primary/60" />
-                <span className="w-3 h-3 rounded-full bg-green-500/60" />
+                <span className="w-3 h-3 rounded-full bg-primary/40" />
                 <span className="font-display text-xs text-muted-foreground ml-2">contact.info</span>
               </div>
 
