@@ -18,6 +18,12 @@ const Contact = () => {
     }, 1200);
   };
 
+  const socials = [
+    { id: 1, name: "github", url: "https://github.com/UnfazedAy" },
+    { id: 2, name: "linkedin", url: "https://www.linkedin.com/in/ayomide-soniyi-3151461a5/" },
+    { id: 3, name: "X (formerly Twitter)", url: "https://twitter.com/SoniyiAyomide_" }
+  ];
+
   return (
     <div className="min-h-[calc(100vh-4rem)]">
       <section className="max-w-6xl mx-auto px-6 pt-20 pb-32">
@@ -109,7 +115,7 @@ const Contact = () => {
                   <Mail size={16} className="text-primary mt-0.5" />
                   <div>
                     <span className="font-display text-xs text-muted-foreground block">email</span>
-                    <span className="text-sm text-foreground font-body">hello@yourname.dev</span>
+                    <span className="text-sm text-foreground font-body">ayomidesoniyi@gmail.com</span>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -131,15 +137,15 @@ const Contact = () => {
               <div className="pt-4 border-t border-border">
                 <span className="font-display text-xs text-muted-foreground block mb-3">// socials</span>
                 <div className="flex gap-4">
-                  {["github", "linkedin", "twitter"].map((social) => (
+                  {socials.map((social) => (
                     <a
-                      key={social}
-                      href={`https://${social}.com`}
+                      key={social.id}
+                      href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="nav-link text-xs font-display"
                     >
-                      {social}
+                      {social.name}
                     </a>
                   ))}
                 </div>

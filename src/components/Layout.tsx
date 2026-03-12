@@ -28,14 +28,14 @@ const Layout = () => {
             &copy; {new Date().getFullYear()} — crafted with intent
           </span>
           <div className="flex gap-6">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="nav-link text-xs">
+            <a href="https://github.com/UnfazedAy" target="_blank" rel="noopener noreferrer" className="nav-link text-xs">
               github
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="nav-link text-xs">
+            <a href="https://www.linkedin.com/in/ayomide-soniyi-3151461a5/" target="_blank" rel="noopener noreferrer" className="nav-link text-xs">
               linkedin
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="nav-link text-xs">
-              twitter
+            <a href="https://twitter.com/SoniyiAyomide_" target="_blank" rel="noopener noreferrer" className="nav-link text-xs">
+              X (formerly Twitter)
             </a>
           </div>
         </div>

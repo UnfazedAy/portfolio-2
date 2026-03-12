@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, Terminal } from "lucide-react";
 
-const roles = ["fullstack developer", "problem solver", "open-source contributor", "api whisperer"];
+const roles = ["software engineer", "problem solver", "lover of code", "api whisperer", "software craftsman"];
 
 const Home = () => {
   const [roleIndex, setRoleIndex] = useState(0);
@@ -51,7 +51,7 @@ const Home = () => {
             <div>
               <h1 className="text-4xl sm:text-5xl lg:text-7xl font-display font-bold text-foreground leading-tight">
                 Hey, I'm{" "}
-                <span className="text-gradient">Your Name</span>
+                <span className="text-gradient">Ayomide Soniyi</span>
               </h1>
             </div>
           </div>
@@ -96,10 +96,10 @@ const Home = () => {
       <section className="border-t border-border">
         <div className="max-w-6xl mx-auto px-6 py-16 grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
-            { label: "years coding", value: "5+" },
-            { label: "projects shipped", value: "30+" },
+            { label: "years coding", value: "3+" },
+            { label: "projects shipped", value: "5+" },
             { label: "cups of coffee", value: "∞" },
-            { label: "github stars", value: "200+" },
+            { label: "github stars", value: "6+" },
           ].map((stat, i) => (
             <motion.div
               key={stat.label}
