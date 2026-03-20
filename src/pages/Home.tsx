@@ -122,14 +122,14 @@ const Home = () => {
           <div className="grid md:grid-cols-2 gap-6">
             {[
               {
-                title: "Cloud Platform Dashboard",
-                desc: "Real-time monitoring dashboard with WebSocket integration, custom charting, and role-based access.",
-                tags: ["React", "TypeScript", "WebSockets"],
+                title: "Payment Gateway API",
+                desc: "A unified payment aggregation service that allows merchants to process online payments through a single API while seamlessly integrating multiple third-party payment gateways",
+                tags: ["Java", "Springboot"],
               },
               {
-                title: "CLI Dev Toolkit",
-                desc: "A developer CLI tool for scaffolding projects, managing configs, and automating deployment pipelines.",
-                tags: ["Node.js", "CLI", "DevOps"],
+                title: "Learn loop",
+                desc: "A productivity and goal-tracking platform designed to help users stay accountable through flexible learning goals, progress tracking, streaks, and personalized motivational content.",
+                tags: ["Node.js", "Typescript", "React", "TailwindCSS", "Supabase"],
               },
             ].map((project, i) => (
               <motion.div
