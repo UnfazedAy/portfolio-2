@@ -1,27 +1,57 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import { Send, Mail, MapPin, Clock } from "lucide-react";
 import { toast } from "sonner";
+
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [sending, setSending] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+      toast.error("Email service is not configured yet.");
+      return;
+    }
+
     setSending(true);
-    // Simulate send — replace with real backend later
-    setTimeout(() => {
-      setSending(false);
+
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          title: "New portfolio contact form submission from " + form.name,
+          name: form.name,
+          time: new Date().toLocaleString(),
+          message: form.message,
+          email: form.email,
+        },
+        {
+          publicKey: EMAILJS_PUBLIC_KEY,
+        }
+      );
+
       toast.success("Message sent! I'll get back to you soon.");
       setForm({ name: "", email: "", message: "" });
-    }, 1200);
+    } catch (error) {
+      console.error("Contact form submission failed", error);
+      toast.error("Message failed to send. Please try again or email me directly.");
+    } finally {
+      setSending(false);
+    }
   };
 
   const socials = [
     { id: 1, name: "github", url: "https://github.com/UnfazedAy" },
     { id: 2, name: "linkedin", url: "https://www.linkedin.com/in/ayomide-soniyi-3151461a5/" },
-    { id: 3, name: "X (formerly Twitter)", url: "https://twitter.com/SoniyiAyomide_" }
+    { id: 3, name: "X (formerly Twitter)", url: "https://twitter.com/SoniyiAyomide_" },
   ];
 
   return (
@@ -42,7 +72,6 @@ const Contact = () => {
         </motion.div>
 
         <div className="grid lg:grid-cols-5 gap-12">
-          {/* Form */}
           <motion.form
             onSubmit={handleSubmit}
             className="lg:col-span-3 space-y-6"
@@ -95,7 +124,6 @@ const Contact = () => {
             </button>
           </motion.form>
 
-          {/* Contact info */}
           <motion.div
             className="lg:col-span-2"
             initial={{ opacity: 0, y: 20 }}
@@ -115,14 +143,19 @@ const Contact = () => {
                   <Mail size={16} className="text-primary mt-0.5" />
                   <div>
                     <span className="font-display text-xs text-muted-foreground block">email</span>
-                    <span className="text-sm text-foreground font-body">ayomidesoniyi@gmail.com</span>
+                    <a
+                      href="mailto:ayomidesoniyi@gmail.com"
+                      className="text-sm text-foreground font-body hover:text-primary transition-colors"
+                    >
+                      ayomidesoniyi@gmail.com
+                    </a>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <MapPin size={16} className="text-primary mt-0.5" />
                   <div>
                     <span className="font-display text-xs text-muted-foreground block">location</span>
-                    <span className="text-sm text-foreground font-body">Remote — Worldwide</span>
+                    <span className="text-sm text-foreground font-body">Remote - Worldwide</span>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
