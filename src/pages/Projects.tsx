@@ -11,6 +11,14 @@ const projects = [
     status: "wip",
   },
   {
+    title: "Woof Mates",
+    description: "WoofMate is a dog matching and messaging app built with React, TypeScript, Vite, Tailwind CSS, and Supabase. Dog owners can create dog profiles, upload multiple photos, browse other dogs in swipe or grid layouts, manage likes and matches, and chat in real time.",
+    tags: ["React", "Supabase", "Typescript", "Vite"],
+    github: "https://github.com/UnfazedAy/woofMate",
+    live: "https://woof-mate.vercel.app/",
+    status: "WIP",
+  },
+  {
     title: "Learn loop",
     description: "A productivity and goal-tracking platform designed to help users stay accountable through flexible learning goals, progress tracking, streaks, and personalized motivational content.",
     tags: ["Node.js", "Typescript", "React", "TailwindCSS", "Supabase"],
@@ -24,14 +32,6 @@ const projects = [
     tags: ["Python", "Flask", "SQLAlchemy", "PostgreSQL"],
     github: "https://github.com/UnfazedAy/DE_COMPRESSOR",
     live: "https://de-compressor.onrender.com/api/v1/docs",
-    status: "shipped",
-  },
-  {
-    title: "Woof Mates",
-    description: "A web app for dog owners to connect with other dogs, not just for breeding but also for playmates and more, helping find the best matches for their dog.",
-    tags: ["Node.js", "Express", "MongoDB"],
-    github: "https://github.com/UnfazedAy/woofMates",
-    live: null,
     status: "shipped",
   },
   {
