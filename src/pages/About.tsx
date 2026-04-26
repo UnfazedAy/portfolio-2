@@ -87,7 +87,7 @@ const About = () => {
                     role: "Backend Developer",
                     company: "Aduad Consulting",
                     period: "2024 — 2025",
-                    desc: "Built and maintained backend services for a SaaS platform serving over 10,000 users, focusing on scalable API design and system reliability. Developed core features across authentication, data management, and business logic, while collaborating across the stack to deliver seamless user experiences. Improved system performance through efficient query design and backend optimizations, contributing to a stable and scalable production environment.",
+                    desc: "Built and maintained backend services for a SaaS platform, focusing on scalable API design and system reliability. Developed core features across authentication, data management, and business logic, while collaborating across the stack to deliver seamless user experiences. Improved system performance through efficient query design and backend optimizations, contributing to a stable and scalable production environment.",
                   },
                   {
                     role: "Python Developer",
