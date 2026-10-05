@@ -1,7 +1,17 @@
 import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const projects = [
+  {
+    title: "SkiFlux",
+    description:
+      "A social learning platform combining educational content, community interaction, and skill-based learning. Built backend APIs for authentication, RBAC, video content, social interactions, notifications, recommendations, skillcoins, payments, and asynchronous background processing.",
+    tags: ["Python", "Django", "DRF", "PostgreSQL", "Celery", "Redis", "Cloudflare R2"],
+    github: null,
+    live: "/projects/skiflux",
+    status: "wip",
+  },
   {
     title: "Payment Gateway API",
     description: "A unified payment aggregation service that allows merchants to process online payments through a single API while seamlessly integrating multiple third-party payment gateways",
@@ -102,31 +112,64 @@ const Projects = () => {
                   </div>
                 </div>
                 <div className="flex items-center gap-3 sm:mt-1">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2 text-muted-foreground hover:text-foreground transition-colors"
-                    aria-label={`${project.title} source code`}
-                  >
-                    <Github size={18} />
-                  </a>
-                  {project.live && (
+                  {project.github && (
                     <a
-                      href={project.live}
+                      href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 text-muted-foreground hover:text-primary transition-colors"
-                      aria-label={`${project.title} live demo`}
+                      className="p-2 text-muted-foreground hover:text-foreground transition-colors"
+                      aria-label={`${project.title} source code`}
                     >
-                      <ExternalLink size={18} />
+                      <Github size={18} />
                     </a>
+                  )}
+                  {project.live && (
+                    project.live.startsWith("/") ? (
+                      <Link
+                        to={project.live}
+                        className="p-2 text-muted-foreground hover:text-primary transition-colors"
+                        aria-label={`${project.title} case study`}
+                      >
+                        <ExternalLink size={18} />
+                      </Link>
+                    ) : (
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 text-muted-foreground hover:text-primary transition-colors"
+                        aria-label={`${project.title} live demo`}
+                      >
+                        <ExternalLink size={18} />
+                      </a>
+                    )
                   )}
                 </div>
               </div>
             </motion.article>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 + projects.length * 0.08, duration: 0.4 }}
+          className="mt-10 p-6 bg-card border border-border rounded-lg"
+        >
+          <p className="text-sm text-muted-foreground font-body">
+            For more projects, visit my{" "}
+            <a
+              href="https://github.com/UnfazedAy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 font-display text-primary hover:text-foreground transition-colors"
+            >
+              GitHub page
+              <Github size={14} />
+            </a>
+            .
+          </p>
+        </motion.div>
       </section>
     </div>
   );

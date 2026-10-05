@@ -1,73 +1,70 @@
-# Welcome to your Lovable project
+# Ayomide Soniyi Portfolio
 
-## Project info
+A developer portfolio built with React, TypeScript, Vite, Tailwind CSS, shadcn/ui, Framer Motion, and React Router.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+The site presents selected backend and full-stack work, including a detailed SkiFlux case study for a private contract project.
 
-## How can I edit this code?
+## Pages
 
-There are several ways of editing your application.
+- `/` - intro, quick stats, and featured work
+- `/projects` - project list with source/demo links where available
+- `/projects/skiflux` - SkiFlux backend engineering case study
+- `/about` - background, experience, and stack
+- `/contact` - contact form and social links
 
-**Use Lovable**
+## Featured Work
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+- SkiFlux - backend engineering case study for a social learning platform
+- Payment Gateway API - unified payment aggregation service
+- Woof Mates - dog matching and messaging app
+- Learn Loop - productivity and goal-tracking platform
+- De-compressor - image compression API
+- Tenzies Game - React dice game
+- Portfolio API - REST API for portfolio data
 
-Changes made via Lovable will be committed automatically to this repo.
+## SkiFlux Note
 
-**Use your preferred IDE**
+The SkiFlux repository is private because it was contract work. The public case study intentionally does not expose private source code, internal URLs, credentials, API keys, proprietary documentation, or non-public infrastructure details.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Tech Stack
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- shadcn/ui
+- Framer Motion
+- React Router
+- Vitest
 
-Follow these steps:
+## Local Development
+
+Install dependencies:
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+npm install
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Start the development server:
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```sh
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Build for production:
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```sh
+npm run build
+```
 
-**Use GitHub Codespaces**
+Run tests:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```sh
+npm test
+```
 
-## What technologies are used for this project?
+Run linting:
 
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+```sh
+npm run lint
+```

@@ -122,14 +122,28 @@ const Home = () => {
           <div className="grid md:grid-cols-2 gap-6">
             {[
               {
+                title: "SkiFlux",
+                desc: "Backend engineering work for a social learning platform with authentication, RBAC, media handling, notifications, recommendations, payments, and async processing.",
+                tags: ["Python", "Django", "DRF", "Celery", "Redis"],
+                href: "/projects/skiflux",
+              },
+              {
                 title: "Payment Gateway API",
                 desc: "A unified payment aggregation service that allows merchants to process online payments through a single API while seamlessly integrating multiple third-party payment gateways",
                 tags: ["Java", "Springboot"],
+                href: "/projects",
+              },
+              {
+                title: "Woof Mates",
+                desc: "A dog matching and messaging app with profile creation, photo uploads, browsing, likes, matches, and real-time chat.",
+                tags: ["React", "Supabase", "Typescript", "Vite"],
+                href: "/projects",
               },
               {
                 title: "Learn loop",
                 desc: "A productivity and goal-tracking platform designed to help users stay accountable through flexible learning goals, progress tracking, streaks, and personalized motivational content.",
                 tags: ["Node.js", "Typescript", "React", "TailwindCSS", "Supabase"],
+                href: "/projects",
               },
             ].map((project, i) => (
               <motion.div
@@ -139,7 +153,7 @@ const Home = () => {
                 transition={{ delay: 0.5 + i * 0.15, duration: 0.5 }}
               >
                 <Link
-                  to="/projects"
+                  to={project.href}
                   className="block p-6 bg-card border border-border rounded-lg card-hover group"
                 >
                   <div className="flex items-center gap-2 mb-3">
