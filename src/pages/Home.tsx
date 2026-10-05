@@ -131,19 +131,19 @@ const Home = () => {
                 title: "Payment Gateway API",
                 desc: "A unified payment aggregation service that allows merchants to process online payments through a single API while seamlessly integrating multiple third-party payment gateways",
                 tags: ["Java", "Springboot"],
-                href: "/projects",
+                href: "/projects#payment-gateway-api",
               },
               {
                 title: "Woof Mates",
                 desc: "A dog matching and messaging app with profile creation, photo uploads, browsing, likes, matches, and real-time chat.",
                 tags: ["React", "Supabase", "Typescript", "Vite"],
-                href: "/projects",
+                href: "/projects#woof-mates",
               },
               {
                 title: "Learn loop",
                 desc: "A productivity and goal-tracking platform designed to help users stay accountable through flexible learning goals, progress tracking, streaks, and personalized motivational content.",
                 tags: ["Node.js", "Typescript", "React", "TailwindCSS", "Supabase"],
-                href: "/projects",
+                href: "/projects#learn-loop",
               },
             ].map((project, i) => (
               <motion.div

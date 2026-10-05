@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const projects = [
   {
@@ -62,7 +63,19 @@ const projects = [
   },
 ];
 
+const getProjectId = (title: string) =>
+  title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+
 const Projects = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (!location.hash) return;
+
+    const target = document.getElementById(location.hash.slice(1));
+    target?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [location.hash]);
+
   return (
     <div className="min-h-[calc(100vh-4rem)]">
       <section className="max-w-6xl mx-auto px-6 pt-20 pb-32">
@@ -83,11 +96,12 @@ const Projects = () => {
         <div className="grid gap-4">
           {projects.map((project, i) => (
             <motion.article
+              id={getProjectId(project.title)}
               key={project.title}
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.1 + i * 0.08, duration: 0.4 }}
-              className="group p-6 bg-card border border-border rounded-lg card-hover"
+              className="group scroll-mt-24 p-6 bg-card border border-border rounded-lg card-hover"
             >
               <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
                 <div className="flex-1">
