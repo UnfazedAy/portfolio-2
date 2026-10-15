@@ -25,6 +25,39 @@ const stack = [
   { category: "tools", items: ["Git", "Figma", "Vim", "Postman", "VS Code"] },
 ];
 
+const experience = [
+  {
+    role: "Backend Developer",
+    company: "SkiFlux",
+    period: "May 2026 — Present",
+    desc: "Built backend features for an education and social learning platform, including role-based access control, content moderation, AI-assisted flagging, learning content APIs, asynchronous media workflows, and payment integrations.",
+  },
+  {
+    role: "Backend Developer",
+    company: "KidsTech Africa",
+    period: "Aug 2025 — Apr 2026",
+    desc: "Led backend development of scalable edtech platforms, including an onboarding system (KidsTech Padi) and a full CBT/school management system with role-based access, automated scoring, and real-time progress tracking. Engineered secure payment integrations to streamline enrollment and revenue tracking, and implemented an offline-first synchronization architecture enabling schools in low-bandwidth environments to operate reliably. Optimized database queries and API performance, improving system efficiency and scalability across growing user bases.",
+  },
+  {
+    role: "Instructor",
+    company: "Code First Girls",
+    period: "Jun 2023 — Feb 2025",
+    desc: "Delivered hands-on training in Python, JavaScript, and software engineering fundamentals to aspiring developers, combining theory with real-world project work. Designed structured learning experiences, mentored students through projects, and improved completion rates through personalized guidance and feedback. Fostered collaborative learning environments and helped students transition from beginners to confident, job-ready developers.",
+  },
+  {
+    role: "Backend Developer",
+    company: "Aduad Consulting",
+    period: "2024 — 2025",
+    desc: "Built and maintained backend services for a SaaS platform, focusing on scalable API design and system reliability. Developed core features across authentication, data management, and business logic, while collaborating across the stack to deliver seamless user experiences. Improved system performance through efficient query design and backend optimizations, contributing to a stable and scalable production environment.",
+  },
+  {
+    role: "Python Developer",
+    company: "Moda Analytica",
+    period: "Aug 2023 — Apr 2024",
+    desc: "Developed data-driven applications and automation tools using Python, including web scraping systems built with Selenium to extract and process large datasets from finance and media sources. Integrated AI-powered summarization using OpenAI APIs to generate structured insights, and designed backend services for storing and serving processed data. Enhanced system reliability by debugging and optimizing existing services for better performance and maintainability.",
+  },
+]
+
 const About = () => {
   return (
     <div className="min-h-[calc(100vh-4rem)]">
@@ -49,7 +82,7 @@ const About = () => {
             transition={{ delay: 0.15, duration: 0.5 }}
           >
             <p className="text-foreground font-body leading-relaxed">
-              I'm a mid-level software developer who lives at the intersection
+              I'm a Backend Software Engineer who lives at the intersection
               of clean architecture and scalability. I believe great software is
               invisible — it just works, and when it doesn't, the error messages
               actually help.
@@ -70,32 +103,7 @@ const About = () => {
             <div className="pt-6 border-t border-border">
               <span className="section-label mb-6 block">// experience</span>
               <div className="space-y-6">
-                {[
-                  {
-                    role: "Backend Developer",
-                    company: "KidsTech Africa",
-                    period: "2025 — present",
-                    desc: "Led backend development of scalable edtech platforms, including an onboarding system (KidsTech Padi) and a full CBT/school management system with role-based access, automated scoring, and real-time progress tracking. Engineered secure payment integrations to streamline enrollment and revenue tracking, and implemented an offline-first synchronization architecture enabling schools in low-bandwidth environments to operate reliably. Optimized database queries and API performance, improving system efficiency and scalability across growing user bases.",
-                  },
-                  {
-                    role: "Instructor",
-                    company: "Code First Girls",
-                    period: "2023 — 2025",
-                    desc: "Delivered hands-on training in Python, JavaScript, and software engineering fundamentals to aspiring developers, combining theory with real-world project work. Designed structured learning experiences, mentored students through projects, and improved completion rates through personalized guidance and feedback. Fostered collaborative learning environments and helped students transition from beginners to confident, job-ready developers.",
-                  },
-                  {
-                    role: "Backend Developer",
-                    company: "Aduad Consulting",
-                    period: "2024 — 2025",
-                    desc: "Built and maintained backend services for a SaaS platform, focusing on scalable API design and system reliability. Developed core features across authentication, data management, and business logic, while collaborating across the stack to deliver seamless user experiences. Improved system performance through efficient query design and backend optimizations, contributing to a stable and scalable production environment.",
-                  },
-                  {
-                    role: "Python Developer",
-                    company: "Moda Analytica",
-                    period: "2023 — 2024",
-                    desc: "Developed data-driven applications and automation tools using Python, including web scraping systems built with Selenium to extract and process large datasets from finance and media sources. Integrated AI-powered summarization using OpenAI APIs to generate structured insights, and designed backend services for storing and serving processed data. Enhanced system reliability by debugging and optimizing existing services for better performance and maintainability.",
-                  },
-                ].map((exp, i) => (
+                {experience.map((exp, i) => (
                   <motion.div
                     key={exp.company}
                     initial={{ opacity: 0, x: -15 }}
@@ -105,7 +113,9 @@ const About = () => {
                   >
                     <div className="flex flex-col items-center pt-1.5">
                       <span className="w-2 h-2 rounded-full bg-primary" />
-                      {i < 2 && <span className="flex-1 w-px bg-border mt-2" />}
+                      {i <= experience.length - 1 && (
+                        <span className="flex-1 w-px bg-border mt-2" />
+                      )}
                     </div>
                     <div className="pb-2">
                       <h3 className="font-display text-sm font-semibold text-foreground">
@@ -113,9 +123,7 @@ const About = () => {
                       </h3>
                       <p className="font-display text-xs text-primary">
                         {exp.company}{" "}
-                        <span className="text-muted-foreground">
-                          · {exp.period}
-                        </span>
+                        <span className="text-muted-foreground">· {exp.period}</span>
                       </p>
                       <p className="text-sm text-muted-foreground font-body mt-1">
                         {exp.desc}
